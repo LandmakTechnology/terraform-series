@@ -7,7 +7,7 @@
 
 The following example shows the variable types that are supported by terraform.
 
-# **String**
+#**String**
  - Strings are usually represented by a double-quoted sequence of Unicode characters, "like this"
 ```t
 variable "vpcname" {
@@ -26,14 +26,14 @@ variable "sshport" {
 }
 ```
 
-# **Boolean**
+#**Boolean**
 - Bools are represented by the unquoted symbols true and false.
 ```t
 variable "enabled" {
   default = false
 }
 ```
-# **List**
+#**List**
 - Lists is represented by a pair of square brackets containing a comma-separated sequence of values, like ["a", 15, true].
 ```t
 variable "mylist" {
@@ -41,10 +41,10 @@ variable "mylist" {
   default = ["Value1", "Value2"]
 }
 ```
-  # How to reference List values ?
+#How to reference List values ?
 instance_type = var.mylist[1]
 
-# **Map**
+#**Map**
 - Maps/objects are represented by a pair of curly braces containing a series of <KEY> = <VALUE> pairs:
 ```T
 variable "mymap" {
@@ -55,17 +55,17 @@ variable "mymap" {
   }
 }
 ```
-  # How to reference Map values ?
+#How to reference Map values ?
 instance_type = var.mymap["key1"]
 
-# **Input**
+#**Input**
  ```t
 variable "inputname" {
   type        = string
   description = "Set the name of the VPC"
 }
 ```
-  # note that if no default value is provided, then the variable will be an input variable and will prompt you to enter a value at runtime.
+# note that if no default value is provided, then the variable will be an input variable and will prompt you to enter a value at runtime.
 
  ```t
 resource "aws_vpc" "myvpc" {
@@ -82,7 +82,7 @@ output "vpcid" {
   value = aws_vpc.myvpc.id
 }
 ```
-# Tuple
+#**Tuple**
 - Lists/tuples are represented by a pair of square brackets containing a comma-separated sequence of values, like ["a", 15, true].
 ```t
 variable "mytuple" {
@@ -90,7 +90,7 @@ variable "mytuple" {
   default = ["cat", 1, "dog"]
 }
 ```
-# Objects
+#**Objects**
 ```t
 variable "myobject" {
   type = object({ name = string, port = list(number) })
@@ -100,9 +100,9 @@ variable "myobject" {
   }
 }
 ```
-##**Variables with Lists and Maps**
+#**Variables with Lists and Maps**
 
-# AWS EC2 Instance Type - List
+#AWS EC2 Instance Type - List
 ```t
  variable "instance_type_list" {
   description = "EC2 Instance Type"
@@ -110,10 +110,10 @@ variable "myobject" {
   default = ["t3.micro", "t3.small"]
 }
 
- #instance_type = var.instance_type_list[0]
+#instance_type = var.instance_type_list[0]
 ```
  
-# AWS EC2 Instance Type - Map
+#AWS EC2 Instance Type - Map
 ```t
  variable "instance_type_map" {
   description = "EC2 Instance Type"
@@ -125,5 +125,5 @@ variable "myobject" {
   }
 }
 
- #instance_type = var.instance_type_map["qa"]
+#instance_type = var.instance_type_map["qa"]
 ```
