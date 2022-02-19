@@ -42,6 +42,7 @@ variable "mylist" {
 }
 ```
 #How to reference List values ?
+
 instance_type = var.mylist[1]
 
 #**Map**
@@ -56,6 +57,7 @@ variable "mymap" {
 }
 ```
 #How to reference Map values ?
+ 
 instance_type = var.mymap["key1"]
 
 #**Input**
@@ -65,7 +67,7 @@ variable "inputname" {
   description = "Set the name of the VPC"
 }
 ```
-# note that if no default value is provided, then the variable will be an input variable and will prompt you to enter a value at runtime.
+- note that if no default value is provided, then the variable will be an input variable and will prompt you to enter a value at runtime.
 
  ```t
 resource "aws_vpc" "myvpc" {
