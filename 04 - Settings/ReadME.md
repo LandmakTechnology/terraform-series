@@ -139,4 +139,4 @@ rm -rf terraform.tfstate*
   -  Terraform `Outputs`
 - Create second resource only after first resource is created
   - Defining Explicit Dependency in Terraform using Resource Meta-Argument `depends_on`
-- WE ARE GOING TO LEARN ALL THE ABOVE CONCEPTS IN NEXT SECTION
+
