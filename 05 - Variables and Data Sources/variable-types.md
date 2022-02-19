@@ -7,15 +7,17 @@
 
 The following example shows the variable types that are supported by terraform.
 
-# String
+# **String**
  - Strings are usually represented by a double-quoted sequence of Unicode characters, "like this"
-
+```t
 variable "vpcname" {
   type    = string
   default = "myvpc"
 }
 
-# Number
+
+#**Number**
+
 - Numbers are represented by unquoted sequences of digits with or without a decimal point, like 15 or 6.283185.
 
 variable "sshport" {
