@@ -1,6 +1,6 @@
 ## **Introduction to Terraform**
 
-Key Concepts:
+Key Concepts: Terraform concept
 a) **Infrastructure as a Code**
   - Managing and provisioning of infrastructure through code instead of manually
   - Files that contain configurations are created and makes it easy to edit and distribute
